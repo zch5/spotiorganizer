@@ -1,0 +1,41 @@
+{
+  "name": "spotiorganizer",
+  "version": "1.0.0",
+  "description": "--> terminal\r vercel",
+  "main": "index.js",
+  "engines": {
+    "node": "16.13.0"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js",
+    "client": "cd client && npm start",
+    "postinstall": "cd client && npm install",
+    "build": "NODE_ENV=production cd client/ && npm install && npm run build",
+    "start-server": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zch5/spotiorganizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zch5/spotiorganizer/issues"
+  },
+  "homepage": "https://github.com/zch5/spotiorganizer#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodeman": "^1.1.2"
+  }
+}
